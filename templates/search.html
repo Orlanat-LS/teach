@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>TestProject</title>
+</head>
+<body>
+<h1>Введите ключевое слово и число предложений</h1>
+    <form method="post" action="/word_search">
+        <input type="text" name="word" value="{{request.cookies.get('word')}}">
+        <input type="number" name="num" value="{{request.cookies.get('num')}}">
+        <button type="submit"> Найти </button>
+    </form>
+    {% for message in messages %}
+    <div>{{ message.text }}<b>#{{ message.tag }}</b></div>
+    {% endfor %}
+</body>
+</html>
